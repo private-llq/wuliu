@@ -6,8 +6,9 @@ import com.wuliu.system.modules.cable.entity.SendOrdersSubtabulation;
 import com.wuliu.system.modules.cable.vo.DepartureStatisticsDetailsVo;
 import com.wuliu.system.modules.cable.vo.DepartureStatisticsVo;
 import com.wuliu.system.modules.cable.vo.PersonnelTaskStatisticsVo;
+import com.wuliu.system.modules.system.entity.SysUser;
 import org.apache.ibatis.annotations.Param;
-
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -37,9 +38,9 @@ public interface StatisticalReportMapper extends BaseMapper<SendOrdersSubtabulat
                                                                      @Param("month") String month,
                                                                      @Param("page") Page<DepartureStatisticsDetailsVo> page);
 
-//    /**
-//     * 查询所有用户用作页面展示
-//     */
-//    @Select("SELECT * FROM sys_user")
-//    List<SysUser> getUsers();
+    /**
+     * 查询所有用户用作页面展示
+     */
+    @Select("SELECT * FROM sys_user")
+    List<SysUser> getUsers();
 }

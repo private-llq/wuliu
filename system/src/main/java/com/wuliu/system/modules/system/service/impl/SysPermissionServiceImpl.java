@@ -40,7 +40,7 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 
 	@Resource
 	private SysPermissionMapper sysPermissionMapper;
-	
+
 	@Resource
 	private ISysPermissionDataRuleService permissionDataRuleService;
 
@@ -92,10 +92,10 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 		//删除部门角色授权
 		sysDepartRolePermissionMapper.deleteByMap(map);
 	}
-	
+
 	/**
 	 * 根据父id删除其关联的子节点数据
-	 * 
+	 *
 	 * @return
 	 */
 	public void removeChildrenBy(String parentId) {
@@ -130,7 +130,7 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 			}
 		}
 	}
-	
+
 	/**
 	  * 逻辑删除
 	 */
@@ -193,7 +193,7 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 			}
 			//----------------------------------------------------------------------
 			this.updateById(sysPermission);
-			
+
 			//如果当前菜单的父菜单变了，则需要修改新父菜单和老父菜单的，叶子节点状态
 			String pid = sysPermission.getParentId();
 			if((oConvertUtils.isNotEmpty(pid) && !pid.equals(p.getParentId())) || oConvertUtils.isEmpty(pid)&&oConvertUtils.isNotEmpty(p.getParentId())) {
@@ -206,10 +206,10 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 						this.sysPermissionMapper.setMenuLeaf(p.getParentId(), 1);
 					}
 				}
-				
+
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -226,7 +226,7 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
 		query.eq(SysPermissionDataRule::getPermissionId, id);
 		int countValue = this.permissionDataRuleService.count(query);
 		if(countValue > 0) {
-			this.permissionDataRuleService.remove(query);	
+			this.permissionDataRuleService.remove(query);
 		}
 	}
 
