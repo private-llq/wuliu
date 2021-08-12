@@ -20,7 +20,6 @@ import java.net.UnknownHostException;
 public class  SystemApplication {
 
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication.run(SystemApplication.class, args);
         ConfigurableApplicationContext application = SpringApplication.run(SystemApplication.class, args);
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();

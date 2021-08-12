@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.InventoryMapper">
-    <select id="InsurancePageList" resultType="org.jeecg.modules.cable.vo.InventoryListsVo">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.InventoryMapper">
+    <select id="InsurancePageList" resultType="com.wuliu.system.modules.cable.vo.InventoryListsVo">
         SELECT
         GROUP_CONCAT( inventory.id ) AS id,
         inventory.project_no,
@@ -98,7 +98,7 @@
         asset_no
     </select>
 
-    <select id="yikuVoPage" resultType="org.jeecg.modules.cable.vo.YikuVo">
+    <select id="yikuVoPage" resultType="com.wuliu.system.modules.cable.vo.YikuVo">
         SELECT
         zhuanyi.id,
         CONCAT( warehouse1.NAME, '-', storage_location1.storage_location_name ) AS name1,

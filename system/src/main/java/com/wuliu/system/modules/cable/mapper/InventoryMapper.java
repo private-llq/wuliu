@@ -1,12 +1,11 @@
 package com.wuliu.system.modules.cable.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wuliu.system.modules.cable.entity.Inventory;
 import com.wuliu.system.modules.cable.vo.InventoryListsVo;
 import com.wuliu.system.modules.cable.vo.YikuVo;
 import org.apache.ibatis.annotations.Param;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-
 
 import java.util.List;
 

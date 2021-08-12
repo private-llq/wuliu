@@ -16,8 +16,6 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-;
-
 /**
  * 物料表
  */
@@ -133,13 +131,15 @@ public class MaterialServiceImpl extends ServiceImpl<MaterialMapper, Material> i
             for (SysDictItem u : units) {
                 if (item.getAccomplishNumUnit() != null) {
                     // 以 / 拼接操作数量和单位
-                    if (u.getItemValue().equals(item.getAccomplishNumUnit().toString()))
+                    if ((u.getItemValue().equals(item.getAccomplishNumUnit().toString()))){
                         item.setAccomplishNumConcatUnit(item.getAccomplishNum().toString().concat("/").concat(u.getItemText()));
+                    }
                 }
             }
             // 以 / 拼接操作重量和单位
-            if (item.getAccomplishWeight() != null)
+            if((item.getAccomplishWeight() != null)){
                 item.setAccomplishWeightConcatUnit(item.getAccomplishWeight().toString().concat("/").concat("吨"));
+            }
         }
         return page.setRecords(list);
     }
@@ -155,13 +155,17 @@ public class MaterialServiceImpl extends ServiceImpl<MaterialMapper, Material> i
             List<StatisticalChartVo> list1 = formattingWeek(materialOutPutAccountVo.getWeek());
             for (StatisticalChartVo statisticalChartVo : list1) {
                 StatisticalChartVo statisticalChartVo1 = baseMapper.materialOutPutDayRList(statisticalChartVo.getDate(), materialOutPutAccountVo.getId());
-                if (statisticalChartVo1 != null) statisticalChartVo.setY(statisticalChartVo1.getY());
+                if ((statisticalChartVo1 != null)){
+                    statisticalChartVo.setY(statisticalChartVo1.getY());
+                }
                 mapR.put(statisticalChartVo.getX(), statisticalChartVo.getY());
             }
             List<StatisticalChartVo> list2 = formattingWeek(materialOutPutAccountVo.getWeek());
             for (StatisticalChartVo statisticalChartVo : list2) {
                 StatisticalChartVo statisticalChartVo1 = baseMapper.materialOutPutDayCList(statisticalChartVo.getDate(), materialOutPutAccountVo.getId());
-                if (statisticalChartVo1 != null) statisticalChartVo.setY(statisticalChartVo1.getY());
+                if ((statisticalChartVo1 != null)){
+                    statisticalChartVo.setY(statisticalChartVo1.getY());
+                }
                 mapC.put(statisticalChartVo.getX(), statisticalChartVo.getY());
             }
             lists.add(mapR);
@@ -509,13 +513,27 @@ public class MaterialServiceImpl extends ServiceImpl<MaterialMapper, Material> i
                 c.add(Calendar.DAY_OF_MONTH, 1);
                 StatisticalChartVo statisticalChartVo = new StatisticalChartVo();
                 statisticalChartVo.setDate(sdf.format(c.getTime()));
-                if (i == 1) statisticalChartVo.setX("周一");
-                if (i == 2) statisticalChartVo.setX("周二");
-                if (i == 3) statisticalChartVo.setX("周三");
-                if (i == 4) statisticalChartVo.setX("周四");
-                if (i == 5) statisticalChartVo.setX("周五");
-                if (i == 6) statisticalChartVo.setX("周六");
-                if (i == 7) statisticalChartVo.setX("周七");
+                if ((i == 1)){
+                    statisticalChartVo.setX("周一");
+                }
+                if ((i == 2)){
+                    statisticalChartVo.setX("周二");
+                }
+                if ((i == 3)){
+                    statisticalChartVo.setX("周三");
+                }
+                if ((i == 4) ){
+                    statisticalChartVo.setX("周四");
+                }
+                if ((i == 5) ){
+                    statisticalChartVo.setX("周五");
+                }
+                if ((i == 6)) {
+                    statisticalChartVo.setX("周六");
+                }
+                if ((i == 7)){
+                    statisticalChartVo.setX("周七");
+                }
                 list.add(statisticalChartVo);
             }
         } else {
@@ -523,13 +541,27 @@ public class MaterialServiceImpl extends ServiceImpl<MaterialMapper, Material> i
                 StatisticalChartVo statisticalChartVo = new StatisticalChartVo();
                 String time = lastWeek(i);
                 statisticalChartVo.setDate(time);
-                if (i == 7) statisticalChartVo.setX("周一");
-                if (i == 6) statisticalChartVo.setX("周二");
-                if (i == 5) statisticalChartVo.setX("周三");
-                if (i == 4) statisticalChartVo.setX("周四");
-                if (i == 3) statisticalChartVo.setX("周五");
-                if (i == 2) statisticalChartVo.setX("周六");
-                if (i == 1) statisticalChartVo.setX("周七");
+                if ((i == 7)){
+                    statisticalChartVo.setX("周一");
+                }
+                if ((i == 6)){
+                    statisticalChartVo.setX("周二");
+                }
+                if ((i == 5)){
+                    statisticalChartVo.setX("周三");
+                }
+                if ((i == 4)){
+                    statisticalChartVo.setX("周四");
+                }
+                if ((i == 3)){
+                    statisticalChartVo.setX("周五");
+                }
+                if ((i == 2)){
+                    statisticalChartVo.setX("周六");
+                }
+                if ((i == 1)){
+                    statisticalChartVo.setX("周七");
+                }
                 list.add(statisticalChartVo);
             }
         }

@@ -44,7 +44,9 @@ public class WXController {
     @ApiOperation(value = "入库处置", notes = "入库处置")
     @PostMapping(value = "/deliverStorage")
     public Result<?> deliverStorage(@RequestBody Deliver_Receiving_StorageVo vo) {
-        if (wxService.deliverStorage(vo) == 1) return Result.ok("操作成功！");
+        if (wxService.deliverStorage(vo) == 1) {
+            return Result.ok("操作成功！");
+        }
         return Result.error("操作有误!");
     }
 
@@ -54,7 +56,9 @@ public class WXController {
     @ApiOperation(value = "出库处置", notes = "出库处置")
     @PostMapping(value = "/receivingStorage")
     public Result<?> receivingStorage(@RequestBody Deliver_Receiving_StorageVo vo) {
-        if (wxService.receivingStorage(vo) == 1) return Result.ok("操作成功！");
+        if (wxService.receivingStorage(vo) == 1) {
+            return Result.ok("操作成功！");
+        }
         return Result.error("操作有误!");
     }
 

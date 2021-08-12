@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.SendOrdersMapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.SendOrdersMapper">
     <!-- 根据年份和月份查询当月每日的车辆任务的数量 -->
-    <select id="selectTheSameMonthSendOrders" resultType="org.jeecg.modules.cable.vo.TaskVo">
+    <select id="selectTheSameMonthSendOrders" resultType="com.wuliu.system.modules.cable.vo.TaskVo">
         SELECT
             DATE_FORMAT( so.task_time, '%d' ) as d,
             COUNT(DISTINCT sos.type_id ) as cou
@@ -17,7 +17,7 @@
     </select>
 
     <!-- 根据日期查询作业车辆 -->
-    <select id="taskList" resultType="org.jeecg.modules.cable.vo.SendOrdersTaskVo">
+    <select id="taskList" resultType="com.wuliu.system.modules.cable.vo.SendOrdersTaskVo">
         SELECT
         DISTINCT
             so.id,
@@ -38,7 +38,7 @@
 	    GROUP BY so.plan_type,sos.type_id,so.operator_schema,wa.`name`,so.project_no,so.backup2
     </select>
 
-    <select id="getPlan" resultType="org.jeecg.modules.cable.vo.SendOrdersTaskVo">
+    <select id="getPlan" resultType="com.wuliu.system.modules.cable.vo.SendOrdersTaskVo">
         SELECT
         plan_type,
         project_no
@@ -73,7 +73,7 @@
     </update>
 
     <!-- 今日派单 -->
-    <select id="selectPlanSendOrdersTheSameDay" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="selectPlanSendOrdersTheSameDay" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT * FROM (
         SELECT
             so.id,
@@ -187,7 +187,7 @@
     </select>
 
     <!-- 派单记录 -->
-    <select id="selectSendOrdersController" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="selectSendOrdersController" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT
         send_orders.backup1,
         send_orders.id,
@@ -252,7 +252,7 @@
     </select>
 
     <!-- 完单记录 -->
-    <select id="selectSendOrdersWD" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="selectSendOrdersWD" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT * FROM (
         select
         rs.id,

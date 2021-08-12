@@ -1,5 +1,6 @@
 package com.wuliu.system.modules.cable.vo;
 
+
 import com.wuliu.common.aspect.annotation.Dict;
 import lombok.Data;
 

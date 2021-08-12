@@ -1,15 +1,15 @@
 package com.wuliu.system.modules.cable.entity;
 
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.jeecgframework.poi.excel.annotation.Excel;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
+import org.jeecgframework.poi.excel.annotation.Excel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 车保险表

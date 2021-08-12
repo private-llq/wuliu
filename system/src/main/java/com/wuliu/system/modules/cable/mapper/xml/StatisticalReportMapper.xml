@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.StatisticalReportMapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.StatisticalReportMapper">
     <!-- 人员任务统计 -->
-    <select id="getPersonnelTaskStatistics" resultType="org.jeecg.modules.cable.vo.PersonnelTaskStatisticsVo">
+    <select id="getPersonnelTaskStatistics" resultType="com.wuliu.system.modules.cable.vo.PersonnelTaskStatisticsVo">
         SELECT * FROM (SELECT realName from sys_user
         <where>
             <if test="null != realName and '' != realName">
@@ -40,7 +40,7 @@
     </select>
 
     <!-- 出车统计 -->
-    <select id="getDepartureStatistics" resultType="org.jeecg.modules.cable.vo.DepartureStatisticsVo">
+    <select id="getDepartureStatistics" resultType="com.wuliu.system.modules.cable.vo.DepartureStatisticsVo">
         SELECT * FROM (SELECT license from vehicle) a1 LEFT JOIN
         (SELECT v.license as li,
         COUNT(IF(MONTH(s.task_time) = 1,true,null)) as m1,
@@ -69,7 +69,7 @@
     </select>
 
     <!-- 出车统计详情 -->
-    <select id="getDepartureStatisticsDetails" resultType="org.jeecg.modules.cable.vo.DepartureStatisticsDetailsVo">
+    <select id="getDepartureStatisticsDetails" resultType="com.wuliu.system.modules.cable.vo.DepartureStatisticsDetailsVo">
         SELECT
         s.task_time as taskTime,
         s.type_id as license,

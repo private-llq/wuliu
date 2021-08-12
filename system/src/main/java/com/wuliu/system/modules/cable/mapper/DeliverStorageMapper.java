@@ -1,10 +1,10 @@
 package com.wuliu.system.modules.cable.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wuliu.system.modules.cable.entity.DeliverStorage;
 import com.wuliu.system.modules.cable.vo.PlanVo;
 import org.apache.ibatis.annotations.Param;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;
 
@@ -24,3 +24,4 @@ public interface DeliverStorageMapper extends BaseMapper<DeliverStorage> {
      */
     void updateDS(@Param("PlanVo") PlanVo planVo);
 }
+

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.DeliverStorageMapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.DeliverStorageMapper">
     <!-- 完单查询 -->
-    <select id="selectPlan2DS" resultType="org.jeecg.modules.cable.vo.PlanVo">
+    <select id="selectPlan2DS" resultType="com.wuliu.system.modules.cable.vo.PlanVo">
         SELECT * FROM
         (
         SELECT

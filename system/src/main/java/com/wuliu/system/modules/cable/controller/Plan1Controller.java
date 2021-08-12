@@ -304,7 +304,7 @@ public class Plan1Controller extends JeecgController<Plan1, IPlan1Service> {
     public Result<?> planTheSameDayEdit(@RequestBody SendOrdersVo sendOrdersVo) {
         switch (sendOrdersVo.getPlanType()) {
             case "1":
-                Plan1 plan1 = plan1Service.getById(sendOrdersVo.getPlanId());
+                Plan1 plan1 = plan1Service.getById(sendOrdersVo.getId());
                 if (null != SysUserConstant.SYS_USER) plan1.setUpdateBy(SysUserConstant.SYS_USER.getUsername());
                 plan1.setUpdateTime(new Date());
                 plan1.setTheContact(sendOrdersVo.getLinkman());

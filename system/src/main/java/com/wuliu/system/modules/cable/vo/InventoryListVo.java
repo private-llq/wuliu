@@ -1,6 +1,8 @@
 package com.wuliu.system.modules.cable.vo;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.jeecgframework.poi.excel.annotation.Excel;
 
 import java.io.Serializable;
 

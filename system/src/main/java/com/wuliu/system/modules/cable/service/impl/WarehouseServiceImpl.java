@@ -1,5 +1,6 @@
 package com.wuliu.system.modules.cable.service.impl;
 
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.List;
+
 
 /**
  * 仓库表

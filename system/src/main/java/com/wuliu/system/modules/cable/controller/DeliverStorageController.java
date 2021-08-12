@@ -2,7 +2,6 @@ package com.wuliu.system.modules.cable.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wuliu.common.api.vo.Result;
 import com.wuliu.common.aspect.annotation.AutoLog;
 import com.wuliu.common.system.base.controller.JeecgController;
@@ -14,6 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

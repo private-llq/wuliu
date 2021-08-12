@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.MaterialMapper">
-    <select id="getMaterialOutPutAccountList" resultType="org.jeecg.modules.cable.vo.MaterialOutPutAccountVo">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.MaterialMapper">
+    <select id="getMaterialOutPutAccountList" resultType="com.wuliu.system.modules.cable.vo.MaterialOutPutAccountVo">
         select
         m.id,
         m.serial AS materialSerial,
@@ -61,7 +61,7 @@
         order by b.create_time desc
     </select>
 
-    <select id="getMaterialRemainingAccountList" resultType="org.jeecg.modules.cable.vo.MaterialRemainingAccountVo">
+    <select id="getMaterialRemainingAccountList" resultType="com.wuliu.system.modules.cable.vo.MaterialRemainingAccountVo">
         SELECT
         CONCAT( p.id, '_', p.type ),
         p.planType,
@@ -276,7 +276,7 @@
     </select>
 
     <!-- 物料年度出入台账 2020/9/4 bai -->
-    <select id="getAnnualAccountList" resultType="org.jeecg.modules.cable.vo.AnnualReportVo">
+    <select id="getAnnualAccountList" resultType="com.wuliu.system.modules.cable.vo.AnnualReportVo">
         SELECT
         p.planType,
         m.serial,
@@ -738,7 +738,7 @@
         update_by, backup1, backup2, backup3, backup4, backup5
     </sql>
 
-    <select id="getMaterialPageList" resultType="org.jeecg.modules.cable.entity.Material">
+    <select id="getMaterialPageList" resultType="com.wuliu.system.modules.cable.entity.Material">
         SELECT
         <include refid="Base_Column_list"></include>
         FROM material
@@ -756,13 +756,13 @@
         ORDER BY update_time DESC
     </select>
 
-    <insert id="saveMaterial" parameterType="org.jeecg.modules.cable.entity.Material" useGeneratedKeys="true"
+    <insert id="saveMaterial" parameterType="com.wuliu.system.modules.cable.entity.Material" useGeneratedKeys="true"
             keyProperty="id">
         INSERT INTO material(serial,name,ations,supplier,unit,material_volume,create_time,update_time)
         VALUES(#{serial},#{name},#{ations},#{supplier},#{unit},#{materialVolume},#{createTime},#{updateTime})
     </insert>
 
-    <update id="editMaterial" parameterType="org.jeecg.modules.cable.entity.Material">
+    <update id="editMaterial" parameterType="com.wuliu.system.modules.cable.entity.Material">
         UPDATE material
         <set>
             <if test="ations != null">
@@ -788,7 +788,7 @@
     </update>
 
     <!-- 出入库台账 bai_2020/9/1 -->
-    <select id="getOutPutWarehouseList" resultType="org.jeecg.modules.cable.vo.OutPutWarehouseVo">
+    <select id="getOutPutWarehouseList" resultType="com.wuliu.system.modules.cable.vo.OutPutWarehouseVo">
         SELECT
         storages.id,
         storages.operator_schema,
@@ -942,7 +942,7 @@
         ORDER BY storages.taskTime DESC
     </select>
 
-    <select id="materialOutPutDayRList" resultType="org.jeecg.modules.cable.vo.StatisticalChartVo">
+    <select id="materialOutPutDayRList" resultType="com.wuliu.system.modules.cable.vo.StatisticalChartVo">
       SELECT
       IFNULL( sum( IFNULL(accomplish_num,0) ) ,0) AS y
   FROM
@@ -953,7 +953,7 @@
       AND DATE_FORMAT( task_time, '%Y-%m-%d' ) = DATE_FORMAT( #{date}, '%Y-%m-%d' )
   </select>
 
-    <select id="materialOutPutDayCList" resultType="org.jeecg.modules.cable.vo.StatisticalChartVo">
+    <select id="materialOutPutDayCList" resultType="com.wuliu.system.modules.cable.vo.StatisticalChartVo">
     SELECT
         IFNULL( sum( IFNULL(accomplish_num,0) ) ,0) AS y
     FROM
@@ -964,7 +964,7 @@
         AND DATE_FORMAT( task_time, '%Y-%m-%d' ) = DATE_FORMAT( #{date}, '%Y-%m-%d' )
   </select>
 
-    <select id="materialOutPutMonthRList" resultType="org.jeecg.modules.cable.vo.StatisticalChartVo">
+    <select id="materialOutPutMonthRList" resultType="com.wuliu.system.modules.cable.vo.StatisticalChartVo">
   SELECT
       IFNULL( sum( IFNULL(accomplish_num,0) ) ,0) AS y
   FROM
@@ -975,7 +975,7 @@
       AND DATE_FORMAT( task_time, '%Y-%m' ) = DATE_FORMAT( #{date}, '%Y-%m' )
   </select>
 
-    <select id="materialOutPutMonthCList" resultType="org.jeecg.modules.cable.vo.StatisticalChartVo">
+    <select id="materialOutPutMonthCList" resultType="com.wuliu.system.modules.cable.vo.StatisticalChartVo">
   SELECT
       IFNULL( sum( IFNULL(accomplish_num,0) ) ,0) AS y
   FROM

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.Plan2Mapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.Plan2Mapper">
     <!-- 计划2批量派单出库数据 -->
-    <select id="idsqueryChuList" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="idsqueryChuList" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT
         p.id,
         p.project_no,
@@ -26,7 +26,7 @@
     </select>
 
     <!-- 查询计划2批量出库完单的数据 -->
-    <select id="getPlan2ReceivingStorageList" resultType="org.jeecg.modules.cable.vo.Plan2Vo">
+    <select id="getPlan2ReceivingStorageList" resultType="com.wuliu.system.modules.cable.vo.Plan2Vo">
         SELECT
         p.id,
         p.project_no,
@@ -53,7 +53,7 @@
     </select>
 
     <!-- 查询计划2批量入库完单的数据 -->
-    <select id="getPlan2DeliverStorage" resultType="org.jeecg.modules.cable.entity.Plan2">
+    <select id="getPlan2DeliverStorage" resultType="com.wuliu.system.modules.cable.entity.Plan2">
         SELECT
         p.id,
         p.project_no,
@@ -69,7 +69,7 @@
         </foreach>
     </select>
 
-    <select id="pageList" resultType="org.jeecg.modules.cable.entity.Plan2">
+    <select id="pageList" resultType="com.wuliu.system.modules.cable.entity.Plan2">
         SELECT * FROM plan2
         <where>
             <if test="null != plan2.site and '' != plan2.site">
@@ -92,7 +92,7 @@
     </select>
 
     <!-- 导出excel bai 2020/9/7 -->
-    <select id="exportPlan2" resultType="org.jeecg.modules.cable.dto.Plan2Im">
+    <select id="exportPlan2" resultType="com.wuliu.system.modules.cable.dto.Plan2Im">
         SELECT
         p.id,
         p.site,
@@ -150,7 +150,7 @@
     </select>
 
     <!-- 首页备品统计物料出入库数量 bai 2020/9/16 -->
-    <select id="getBPTJList" resultType="org.jeecg.modules.cable.vo.IndexBPTJVo">
+    <select id="getBPTJList" resultType="com.wuliu.system.modules.cable.vo.IndexBPTJVo">
         SELECT
         *
         FROM

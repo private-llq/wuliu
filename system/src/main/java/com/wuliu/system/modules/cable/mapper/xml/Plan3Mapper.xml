@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.Plan3Mapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.Plan3Mapper">
     <!-- 计划2批量派单出库数据 -->
-    <select id="idsqueryChuList" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="idsqueryChuList" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT
         p.id,
         p.project_no,
@@ -26,7 +26,7 @@
     </select>
 
     <!-- 查询计划3批量出库完单的数据 -->
-    <select id="getPlan3ReceivingStorageList" resultType="org.jeecg.modules.cable.vo.Plan3Vo">
+    <select id="getPlan3ReceivingStorageList" resultType="com.wuliu.system.modules.cable.vo.Plan3Vo">
         SELECT
         p.id,
         p.project_no,
@@ -53,7 +53,7 @@
     </select>
 
     <!-- 查询计划3批量入库完单的数据 -->
-    <select id="getPlan3DeliverStorage" resultType="org.jeecg.modules.cable.entity.Plan3">
+    <select id="getPlan3DeliverStorage" resultType="com.wuliu.system.modules.cable.entity.Plan3">
         SELECT
         p.id,
         p.project_no,
@@ -69,7 +69,7 @@
         </foreach>
     </select>
 
-    <select id="pageList" resultType="org.jeecg.modules.cable.entity.Plan3">
+    <select id="pageList" resultType="com.wuliu.system.modules.cable.entity.Plan3">
         SELECT * FROM plan3
         <where>
             <if test="null != plan3.planType">
@@ -92,7 +92,7 @@
     </select>
 
     <!-- 导出excel bai 2020/9/8 -->
-    <select id="exportPlan3" resultType="org.jeecg.modules.cable.dto.Plan3Im">
+    <select id="exportPlan3" resultType="com.wuliu.system.modules.cable.dto.Plan3Im">
         SELECT
         p.id,
         p.project_no,
@@ -154,7 +154,7 @@
     </select>
 
     <!-- 计划表3新品统计 -->
-    <select id="selectNewproducts" resultType="org.jeecg.modules.cable.vo.Plan3Vo">
+    <select id="selectNewproducts" resultType="com.wuliu.system.modules.cable.vo.Plan3Vo">
         SELECT eng_name,material_describe,Sum(ds1.accomplish_num) warehousing_num,Sum(rs1.accomplish_num)
         warehouse_out_num,item_text
         from plan3 p1
@@ -183,7 +183,7 @@
     </select>
 
     <!-- 导出汇总 -->
-    <select id="exportPlan2" resultType="org.jeecg.modules.cable.vo.Plan3ExcelVo">
+    <select id="exportPlan2" resultType="com.wuliu.system.modules.cable.vo.Plan3ExcelVo">
         SELECT eng_name,material_describe,Sum(ds1.accomplish_num) warehousing_num,Sum(rs1.accomplish_num)
         warehouse_out_num,item_text
         from plan3 p1
@@ -207,7 +207,7 @@
     </select>
 
     <!-- 首页临措统计 bai 2020/9/17 -->
-    <select id="getLCTJList" resultType="org.jeecg.modules.cable.vo.IndexLCTJVo">
+    <select id="getLCTJList" resultType="com.wuliu.system.modules.cable.vo.IndexLCTJVo">
         SELECT
         *
         FROM

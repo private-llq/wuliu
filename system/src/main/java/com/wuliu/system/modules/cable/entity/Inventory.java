@@ -1,18 +1,18 @@
 package com.wuliu.system.modules.cable.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.jeecgframework.poi.excel.annotation.Excel;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.jeecgframework.poi.excel.annotation.Excel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 库存表

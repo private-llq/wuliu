@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.WarehouseMapper">
-    <select id="InventoryIocationListVoPage" resultType="org.jeecg.modules.cable.vo.InventoryIocationListVo">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.WarehouseMapper">
+    <select id="InventoryIocationListVoPage" resultType="com.wuliu.system.modules.cable.vo.InventoryIocationListVo">
         SELECT
         CONCAT( p.id,'_', p.type ) as id ,
         p.plan_type,
@@ -131,7 +131,7 @@
         ORDER BY s.task_time desc
     </select>
 
-    <select id="keweiQuery" resultType="org.jeecg.modules.cable.vo.KuweiVo">
+    <select id="keweiQuery" resultType="com.wuliu.system.modules.cable.vo.KuweiVo">
     SELECT
     storages.storage_location_id ,
     storage_location.storage_location_name,
@@ -198,7 +198,7 @@
   </select>
 
     <!-- 库存详情查询 -->
-    <select id="selectInfo" resultType="org.jeecg.modules.cable.vo.InventoryVo">
+    <select id="selectInfo" resultType="com.wuliu.system.modules.cable.vo.InventoryVo">
         SELECT
         DISTINCT
         p.pAssetNo AS 'pAssetNo',
@@ -289,7 +289,7 @@
     </select>
 
     <!-- 库存查询 -->
-    <select id="selectPageinventory" resultType="org.jeecg.modules.cable.vo.InventoryVo">
+    <select id="selectPageinventory" resultType="com.wuliu.system.modules.cable.vo.InventoryVo">
         SELECT
         iy.id,
         ml.serial AS serial,
@@ -317,7 +317,7 @@
         ORDER BY iy.create_time DESC,ml.create_time DESC
     </select>
 
-    <select id="kewei" resultType="org.jeecg.modules.cable.vo.KuweiVo">
+    <select id="kewei" resultType="com.wuliu.system.modules.cable.vo.KuweiVo">
         <foreach item="id" collection="ids" separator="union all">
             SELECT inventory.inventory_quantity as currentInventory,storage_location.storage_location_name as
             storageLocationName from inventory

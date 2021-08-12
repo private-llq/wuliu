@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.cable.mapper.Plan4Mapper">
+<mapper namespace="com.wuliu.system.modules.cable.mapper.Plan4Mapper">
     <!-- 计划2批量派单出库数据 -->
-    <select id="idsqueryChuList" resultType="org.jeecg.modules.cable.vo.SendOrdersVo">
+    <select id="idsqueryChuList" resultType="com.wuliu.system.modules.cable.vo.SendOrdersVo">
         SELECT
         p.id,
         p.project_no,
@@ -24,7 +24,7 @@
     </select>
 
     <!-- 查询计划4批量出库完单的数据 -->
-    <select id="getPlan4ReceivingStorageList" resultType="org.jeecg.modules.cable.vo.Plan4Vo">
+    <select id="getPlan4ReceivingStorageList" resultType="com.wuliu.system.modules.cable.vo.Plan4Vo">
         SELECT
         p.id,
         p.project_no,
@@ -48,7 +48,7 @@
     </select>
 
     <!-- 查询计划4批量入库完单的数据 -->
-    <select id="getPlan4DeliverStorage" resultType="org.jeecg.modules.cable.entity.Plan4">
+    <select id="getPlan4DeliverStorage" resultType="com.wuliu.system.modules.cable.entity.Plan4">
         SELECT
         p.id,
         p.project_no,
@@ -64,7 +64,7 @@
         </foreach>
     </select>
 
-    <select id="pageList" resultType="org.jeecg.modules.cable.entity.Plan4">
+    <select id="pageList" resultType="com.wuliu.system.modules.cable.entity.Plan4">
         SELECT * FROM plan4
         <where>
             <if test="null != plan4.projectNo and '' != plan4.projectNo">
@@ -84,7 +84,7 @@
     </select>
 
     <!-- 导出计划表4数据 -->
-    <select id="exportPlan4" resultType="org.jeecg.modules.cable.dto.Plan4Im">
+    <select id="exportPlan4" resultType="com.wuliu.system.modules.cable.dto.Plan4Im">
         SELECT
         plan4.id,
         plan4.eng_name,
@@ -148,7 +148,7 @@
     </select>
 
     <!-- 导出计划表4汇总 -->
-    <select id="exportFeedbackSummary" resultType="org.jeecg.modules.cable.vo.Plan4Vo">
+    <select id="exportFeedbackSummary" resultType="com.wuliu.system.modules.cable.vo.Plan4Vo">
         SELECT
         plan4.id,
         plan4.project_no,
@@ -172,7 +172,7 @@
     </select>
 
     <!-- 计划表4电缆统计 -->
-    <select id="selectCable" resultType="org.jeecg.modules.cable.vo.Plan4Vo">
+    <select id="selectCable" resultType="com.wuliu.system.modules.cable.vo.Plan4Vo">
         SELECT ds1.recycling_specifications as voltage_grade,eng_name,ds1.texture,Sum(ds1.accomplish_num) length,Sum(ds1.accomplish_weight) weight,Sum(rs1.accomplish_weight) retrieval_weight
         FROM plan4 p1
         INNER JOIN deliver_storage ds1 on p1.id=ds1.plan_id
@@ -197,7 +197,7 @@
     </select>
 
     <!-- 导出汇总 -->
-    <select id="exportPlan3" resultType="org.jeecg.modules.cable.vo.Plan4ExcelVo">
+    <select id="exportPlan3" resultType="com.wuliu.system.modules.cable.vo.Plan4ExcelVo">
         SELECT ds1.recycling_specifications as voltage_grade,eng_name,ds1.texture,Sum(ds1.accomplish_num) length,Sum(ds1.accomplish_weight) weight,Sum(rs1.accomplish_weight) retrieval_weight
         FROM plan4 p1
         INNER JOIN deliver_storage ds1 on p1.id=ds1.plan_id

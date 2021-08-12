@@ -94,7 +94,9 @@ public class WarehouseController extends JeecgController<Warehouse, IWarehouseSe
             if (warehouse.getType() == 1) {
                 // 代表本次添加的仓库是自家仓库
                 List<Warehouse> list = warehouseService.list(new QueryWrapper<Warehouse>().eq("name", warehouse.getName()));
-                if (list.size() > 0) return Result.error("仓库已经存在,不能重复添加！");
+                if ((list.size() > 0) ){
+                    return Result.error("仓库已经存在,不能重复添加！");
+                }
             }
         }
         warehouse.setUpdateTime(new Date());
@@ -125,7 +127,9 @@ public class WarehouseController extends JeecgController<Warehouse, IWarehouseSe
         QueryWrapper<StorageLocation> wrapper = new QueryWrapper<>();
         wrapper.eq("warehouse_id", id);
         List<StorageLocation> list = storageLocationService.list(wrapper);
-        if (list.size() > 0) return Result.error("此仓库下存在库位,不能被删除!");
+        if( (list.size() > 0)){
+            return Result.error("此仓库下存在库位,不能被删除!");
+        }
         warehouseService.removeById(id);
         return Result.ok("删除成功!");
     }
@@ -149,7 +153,9 @@ public class WarehouseController extends JeecgController<Warehouse, IWarehouseSe
     @GetMapping(value = "/queryById")
     public Result<?> queryById(@RequestParam(name = "id") String id) {
         Warehouse warehouse = warehouseService.getById(id);
-        if (warehouse == null) return Result.error("未找到对应数据");
+        if ((warehouse == null)){
+            return Result.error("未找到对应数据");
+        }
         return Result.ok(warehouse);
     }
 
