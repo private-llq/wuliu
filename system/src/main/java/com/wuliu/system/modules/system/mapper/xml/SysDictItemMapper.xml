@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.system.mapper.SysDictItemMapper">
-    <select id="selectType" resultType="org.jeecg.modules.system.entity.SysDictItem">
+<mapper namespace="com.wuliu.system.modules.system.mapper.SysDictItemMapper">
+    <select id="selectType" resultType="com.wuliu.system.modules.system.entity.SysDictItem">
         SELECT *  FROM sys_dict_item WHERE dict_id = (SELECT id FROM sys_dict WHERE dict_code = #{type})
     </select>
     <select id="getBumenId" resultType="long">
@@ -15,7 +15,7 @@
             item_value DESC
             LIMIT 1
     </select>
-    <select id="selectBYDict" resultType="org.jeecg.modules.system.entity.SysDictItem">
+    <select id="selectBYDict" resultType="com.wuliu.system.modules.system.entity.SysDictItem">
         SELECT
             *
         FROM

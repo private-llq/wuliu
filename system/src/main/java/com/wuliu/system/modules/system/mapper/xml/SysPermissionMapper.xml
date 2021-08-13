@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.jeecg.modules.system.mapper.SysPermissionMapper">
+<mapper namespace="com.wuliu.system.modules.system.mapper.SysPermissionMapper">
 
 
-	<resultMap id="TreeModel" type="org.jeecg.modules.system.model.TreeModel" >
+	<resultMap id="TreeModel" type="com.wuliu.system.modules.system.model.TreeModel" >
 		<result column="id" property="key" jdbcType="VARCHAR"/>
 		<result column="name" property="title" jdbcType="VARCHAR"/>
 		<result column="icon" property="icon" jdbcType="VARCHAR"/>
@@ -12,7 +12,7 @@
 	</resultMap>
 	
 	<!-- 通过<resultMap>映射实体类属性名和表的字段名对应关系 -->
-	<resultMap id="SysPermission" type="org.jeecg.modules.system.entity.SysPermission">
+	<resultMap id="SysPermission" type="com.wuliu.system.modules.system.entity.SysPermission">
 	   <!-- result属性映射非匹配字段 -->
 	    <result column="is_route" property="route"/>
 	    <result column="keep_alive" property="keepAlive"/>
