@@ -17,7 +17,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("deliver_storage")
-public class DeliverStorage implements Serializable {
+public class  DeliverStorage implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**

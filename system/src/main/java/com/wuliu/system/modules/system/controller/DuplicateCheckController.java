@@ -1,19 +1,18 @@
 package com.wuliu.system.modules.system.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.wuliu.common.api.vo.Result;
 import com.wuliu.system.modules.system.mapper.SysDictMapper;
 import com.wuliu.system.modules.system.model.DuplicateCheckVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Title: DuplicateCheckAction
@@ -28,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Api(tags = "重复校验")
 public class DuplicateCheckController {
 
-    @Autowired
+    @Resource
     SysDictMapper sysDictMapper;
 
     /**
