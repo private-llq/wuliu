@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/message/sysMessageTemplate")
 public class SysMessageTemplateController extends JeecgController<SysMessageTemplate, ISysMessageTemplateService> {
-    @Autowired
+    @Resource
     private ISysMessageTemplateService sysMessageTemplateService;
     @Autowired
     private PushMsgUtil pushMsgUtil;

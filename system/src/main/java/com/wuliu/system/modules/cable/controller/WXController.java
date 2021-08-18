@@ -9,8 +9,9 @@ import com.wuliu.system.modules.cable.vo.PickUpTheTaskVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * WX小程序接口
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/wx")
 @Slf4j
 public class WXController {
-    @Autowired
+    @Resource
     private IWXService wxService;
 
     /**
